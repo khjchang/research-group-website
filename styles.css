@@ -1,11 +1,12 @@
 /* ===========================
    General Reset
    =========================== */
+
 html,
 body {
-  height: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 body {
@@ -18,11 +19,13 @@ body {
 }
 
 .fixed-container {
+  width: 100%;
   max-width: 1150px;
-  min-width: 1150px;
-  margin: auto;
-  padding: 0 0.5rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
+
 
 .remove-margin-top {
   margin-top: 0;
@@ -35,11 +38,12 @@ body {
 /* ===========================
      Navbar (LEPS style)
      =========================== */
-.topnav {
+.topnav,
+.ucd-footer {
+  width: 100vw;
+  margin-left: calc(50% - 50vw); /* 중앙 컨테이너 기준으로 좌우 확장 */
   background-color: #002855;
-  padding: 0;
 }
-
 
 .nav-container {
   display: flex;
@@ -224,7 +228,6 @@ font-size: 15px;
      Footer
      =========================== */
 .ucd-footer {
-  background: #002855;
   color: white;
   text-align: center;
   padding: 1.5rem 0.5rem;
