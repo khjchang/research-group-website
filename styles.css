@@ -26,6 +26,13 @@ body {
   box-sizing: border-box;
 }
 
+.main-page-font-size {
+  font-size: 21px;
+}
+
+.main-page-group-font-size {
+  font-size: 25px;
+}
 
 .remove-margin-top {
   margin-top: 0;
@@ -33,7 +40,7 @@ body {
 
 .main-box {
   padding-left: 1rem;
-  padding-right: 1rem;
+  padding-right: 2rem;
 }
 /* ===========================
      Navbar (LEPS style)
@@ -182,20 +189,33 @@ body {
 }
 
 .content {
-  width: 150%;
+  width: 100%;
   padding: 0.5rem;
   text-align: center;
   position: relative;
   border-right: 1px dotted #eee;
   display: flex;
-flex-direction: column;
-justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
 }
 .content-main_page {
-font-size: 15px;
-
+  font-size: 15px;
 }
 
+.remove-left-padding {
+  padding-left: 0;
+}
+
+.add-left-padding{
+  padding-left: 3rem;
+}
+
+.department-link {
+  position: absolute;
+  font-size: 18px;
+  bottom: 3rem;
+}
 /* ===========================
      Map
      =========================== */
@@ -531,9 +551,6 @@ personal link github & linkedin */
   color: #000;
   transform: scale(1.1);
 }
-
-
-
 
 html {
   overflow-y: scroll; /* 항상 세로 스크롤바 공간 확보 */
