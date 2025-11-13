@@ -193,7 +193,7 @@ body {
   padding: 0.5rem;
   text-align: center;
   position: relative;
-  border-right: 1px dotted #eee;
+  /* border-right: 1px dotted #eee; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
