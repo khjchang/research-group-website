@@ -108,6 +108,10 @@ body {
   z-index: 200;
 }
 
+.hidden-card{
+  visibility: hidden;
+}
+
 .nav-menu li:hover > .dropdown {
   display: block;
 }
