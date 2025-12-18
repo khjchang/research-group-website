@@ -27,11 +27,14 @@ body {
 }
 
 .main-page-font-size {
-  font-size: 21px;
+  font-size: 20px;
 }
 
-.main-page-group-font-size {
+.group-font-size {
   font-size: 40px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: #002855;
 }
 
 .remove-margin-top {
@@ -65,6 +68,7 @@ body {
   display: flex;
   margin: 0;
   padding: 0;
+  font-size: 20px;
 }
 
 .nav-menu li {
@@ -108,7 +112,7 @@ body {
   z-index: 200;
 }
 
-.hidden-card{
+.hidden-card {
   visibility: hidden;
 }
 
@@ -211,7 +215,7 @@ body {
   padding-left: 0;
 }
 
-.add-left-padding{
+.add-left-padding {
   padding-left: 3rem;
 }
 
@@ -397,8 +401,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  min-height: 50px;
-   font-size: 50px !important; 
+  min-height: 90px;
 
 }
 
@@ -407,6 +410,7 @@ body {
   font-size: 13px;
   font-family: Arial, sans-serif;
   margin: 0;
+  font-size: 20px;
 }
 
 .publication-first {
@@ -414,7 +418,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  min-height: 50px;
+  min-height: 90px;
 }
 
 .publication-last {
@@ -422,7 +426,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  min-height: 50px;
+  min-height: 90px;
 }
 .project {
   border-bottom: 1px solid #ddd;
@@ -440,7 +444,7 @@ body {
 
 .person-card {
   position: relative;
-  width: 180px;
+  width: 220px;
   background: white;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -468,6 +472,8 @@ body {
   justify-content: center;
   gap: 10px;
   bottom: 65px;
+  font-size: 16px;
+
 }
 
 .person-card img.person-photo {
@@ -508,12 +514,6 @@ body {
   object-position: center 0% !important;
   transition: transform 0.3s ease;
 }
-/* 
-.adjust-photo {
-  object-fit: cover !important;
-  object-position: center 1% !important;
-  transition: transform 0.3s ease;
-} */
 
 .people-grid {
   display: flex;
@@ -523,8 +523,9 @@ body {
   margin: 1.5rem;
 }
 
-/* 
-personal link github & linkedin */
+/* ===========================
+       Personal link github & linkedin 
+       =========================== */
 
 .social-icons {
   display: flex;
@@ -535,7 +536,7 @@ personal link github & linkedin */
 }
 
 .social {
-  font-size: 1.5rem; /* 아이콘 크기 */
+  font-size: 1.5rem;
   text-decoration: none;
   transition: transform 0.25s ease, color 0.25s ease;
 }
@@ -549,7 +550,6 @@ personal link github & linkedin */
   transform: scale(1.1);
 }
 
-/* GitHub 색상 */
 .social.github {
   color: #24292f;
 }
@@ -559,5 +559,13 @@ personal link github & linkedin */
 }
 
 html {
-  overflow-y: scroll; /* 항상 세로 스크롤바 공간 확보 */
+  overflow-y: scroll;
+}
+
+/* ===========================
+      Project page
+       =========================== */
+
+.members{
+  font-size: 16px !important;
 }
