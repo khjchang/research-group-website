@@ -402,7 +402,6 @@ body {
   align-items: center;
   justify-content: flex-start;
   min-height: 90px;
-
 }
 
 .citation {
@@ -473,7 +472,6 @@ body {
   gap: 10px;
   bottom: 65px;
   font-size: 16px;
-
 }
 
 .person-card img.person-photo {
@@ -566,6 +564,6 @@ html {
       Project page
        =========================== */
 
-.members{
+.members {
   font-size: 16px !important;
 }
