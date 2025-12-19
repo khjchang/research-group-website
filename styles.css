@@ -564,3 +564,8 @@ html {
 .members {
   font-size: 16px !important;
 }
+
+
+.remove-bottom-margin{
+   margin-bottom: 0;
+}
