@@ -29,6 +29,9 @@ body {
 .main-page-font-size {
   font-size: 20px;
 }
+#line_gap {
+  line-height: 2;
+}
 
 .group-font-size {
   font-size: 40px;
@@ -243,13 +246,16 @@ body {
 }
 
 .lab-logo {
-  width: 60%;
+  width: 100%;
   height: auto;
   display: block;
   margin: 0 auto;
   border: none;
   border-radius: 0;
 }
+
+
+
 
 /* ===========================
      Footer
