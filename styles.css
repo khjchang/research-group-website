@@ -222,6 +222,8 @@ body {
 }
 .content-main_page {
   font-size: 15px;
+  flex: 0 0 300px;
+  max-width: 300px;
 }
 
 .remove-left-padding {
@@ -617,6 +619,12 @@ html {
 
   .content {
     padding: 0;
+  }
+
+  .content-main_page {
+    align-self: center;
+    flex-basis: auto;
+    width: min(100%, 300px);
   }
 
   .lab-logo {
