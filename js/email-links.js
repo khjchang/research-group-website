@@ -17,5 +17,5 @@ document.addEventListener("click", (event) => {
 
   const email = `${user}@${domain}.${tld}`;
   const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`;
-  window.open(url, "_blank", "noopener");
+  window.open(url, "_blank", "noopener,noreferrer");
 });

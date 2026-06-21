@@ -99,8 +99,74 @@ function createPublicationItem(publication) {
 
   const citation = document.createElement("p");
   citation.className = "citation";
-  citation.innerHTML = publication.citation_html;
+  citation.appendChild(sanitizeCitationHtml(publication.citation_html));
 
   item.appendChild(citation);
   return item;
+}
+
+function sanitizeCitationHtml(html) {
+  const template = document.createElement("template");
+  template.innerHTML = html;
+
+  const allowedTags = new Set(["A", "B", "BR", "EM", "I", "STRONG"]);
+  const fragment = document.createDocumentFragment();
+
+  for (const child of Array.from(template.content.childNodes)) {
+    fragment.appendChild(sanitizeNode(child, allowedTags));
+  }
+
+  return fragment;
+}
+
+function sanitizeNode(node, allowedTags) {
+  if (node.nodeType === Node.TEXT_NODE) {
+    return document.createTextNode(node.textContent);
+  }
+
+  if (node.nodeType !== Node.ELEMENT_NODE) {
+    return document.createTextNode("");
+  }
+
+  if (!allowedTags.has(node.tagName)) {
+    const textFragment = document.createDocumentFragment();
+    for (const child of Array.from(node.childNodes)) {
+      textFragment.appendChild(sanitizeNode(child, allowedTags));
+    }
+    return textFragment;
+  }
+
+  const clean = document.createElement(node.tagName.toLowerCase());
+
+  if (node.tagName === "A") {
+    const href = sanitizeHref(node.getAttribute("href"));
+    if (href) {
+      clean.href = href;
+      clean.target = "_blank";
+      clean.rel = "noopener noreferrer";
+    }
+
+    if (node.classList.contains("paper-link")) {
+      clean.className = "paper-link";
+    }
+  }
+
+  for (const child of Array.from(node.childNodes)) {
+    clean.appendChild(sanitizeNode(child, allowedTags));
+  }
+
+  return clean;
+}
+
+function sanitizeHref(href) {
+  if (!href) {
+    return "";
+  }
+
+  try {
+    const url = new URL(href, window.location.href);
+    return ["http:", "https:"].includes(url.protocol) ? url.href : "";
+  } catch (error) {
+    return "";
+  }
 }

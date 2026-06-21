@@ -165,7 +165,7 @@ function addIconLink(container, href, className, label, iconClass) {
   const link = document.createElement("a");
   link.href = href;
   link.target = "_blank";
-  link.rel = "noopener";
+  link.rel = "noopener noreferrer";
   link.className = `social ${className}`;
   link.ariaLabel = label;
   link.innerHTML = `<i class="${iconClass}"></i>`;
@@ -180,7 +180,7 @@ function addScholarLink(container, href) {
   const link = document.createElement("a");
   link.href = href;
   link.target = "_blank";
-  link.rel = "noopener";
+  link.rel = "noopener noreferrer";
   link.className = "social scholar";
   link.ariaLabel = "Google Scholar";
   link.innerHTML =
