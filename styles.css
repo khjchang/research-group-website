@@ -9,6 +9,10 @@ body {
   overflow-x: hidden;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   min-height: 100vh;
   display: flex;
@@ -52,6 +56,7 @@ body {
 .main-box {
   padding-left: 1rem;
   padding-right: 2rem;
+  width: 100%;
 }
 /* ===========================
      Navbar (LEPS style)
@@ -69,11 +74,13 @@ body {
   align-items: center;
   max-width: 1150px;
   margin: auto;
+  padding: 0 1rem;
 }
 
 .nav-menu {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   font-size: 20px;
@@ -315,6 +322,7 @@ body {
   margin-bottom: 0.8rem;
   /* height: 30rem; */
   display: flex;
+  width: 100%;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
@@ -406,6 +414,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   min-height: 90px;
+  padding: 1rem 0;
 }
 
 .citation {
@@ -421,6 +430,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   min-height: 90px;
+  padding: 1rem 0;
 }
 
 .publication-last {
@@ -429,6 +439,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   min-height: 90px;
+  padding: 1rem 0;
 }
 .project {
   border-bottom: 1px solid #ddd;
@@ -445,35 +456,39 @@ body {
 }
 
 .person-card {
-  position: relative;
+  display: flex;
+  flex-direction: column;
   width: 220px;
   background: white;
   border: 1px solid #ccc;
   border-radius: 6px;
   text-align: center;
   padding: 0.8rem;
-  height: 310px;
+  min-height: 320px;
+}
+
+.person-card h2 {
+  margin: 0.75rem 0 0.35rem;
+  font-size: 22px;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
 }
 
 .social-icons {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
   display: flex;
   justify-content: center;
   gap: 10px;
+  margin-top: auto;
+  padding-top: 1rem;
 }
 
 .student-title-position {
-  position: absolute;
-  left: 0;
-  right: 0;
   display: flex;
   justify-content: center;
   gap: 10px;
-  bottom: 65px;
   font-size: 16px;
+  line-height: 1.25;
+  margin: 0 0 1rem;
 }
 
 .person-card img.person-photo {
@@ -516,8 +531,8 @@ body {
 }
 
 .people-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 220px));
   gap: 1rem;
   justify-content: center;
   margin: 1.5rem;
@@ -570,4 +585,196 @@ html {
 
 .text-justify {
   text-align: justify;
+}
+
+/* ===========================
+      Responsive layout
+      =========================== */
+
+@media (max-width: 900px) {
+  .fixed-container {
+    padding: 0 clamp(1.5rem, 5vw, 2rem);
+  }
+
+  .two-column {
+    margin-top: 1.75rem;
+  }
+
+  .two-column.fixed-container {
+    padding-left: clamp(1.5rem, 5vw, 2rem);
+    padding-right: clamp(1.5rem, 5vw, 2rem);
+  }
+
+  .main-wrap {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .main-box {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  .content {
+    padding: 0;
+  }
+
+  .lab-logo {
+    max-width: 560px;
+  }
+
+  .group-font-size {
+    font-size: 32px;
+  }
+
+  .main-page-font-size,
+  .citation {
+    font-size: 18px;
+  }
+
+  .add-left-padding {
+    padding-left: 1.5rem;
+  }
+
+  .publication-first-top,
+  .publication-first,
+  .publication-last {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .fixed-container {
+    padding: 0 clamp(1.35rem, 6vw, 1.75rem);
+  }
+
+  .topnav {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .nav-container {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .nav-menu {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .nav-menu li {
+    flex: 1 1 50%;
+  }
+
+  .nav-menu > li > a {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 0.5rem;
+    text-align: center;
+  }
+
+  .nav-menu > li > a:hover,
+  .nav-menu > li.active > a {
+    clip-path: none;
+  }
+
+  .two-column {
+    display: block;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 1.25rem;
+  }
+
+  .two-column.fixed-container {
+    padding-left: clamp(1.35rem, 6vw, 1.75rem);
+    padding-right: clamp(1.35rem, 6vw, 1.75rem);
+  }
+
+  .main-box {
+    padding-left: 0.15rem;
+    padding-right: 0.15rem;
+  }
+
+  .group-font-size {
+    font-size: 28px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .main-page-font-size,
+  .citation {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  #line_gap {
+    line-height: 1.7;
+  }
+
+  .text-justify,
+  .citation {
+    text-align: left;
+  }
+
+  .add-left-padding {
+    padding-left: 1.25rem;
+  }
+
+  .people-grid {
+    grid-template-columns: minmax(0, 1fr);
+    margin: 1rem 0;
+  }
+
+  .person-card {
+    width: 100%;
+    max-width: 300px;
+    justify-self: center;
+  }
+
+  .publication-first-top,
+  .publication-first,
+  .publication-last {
+    min-height: 0;
+  }
+
+  .ucd-footer {
+    width: 100%;
+    margin-left: 0;
+    padding: 1.25rem clamp(1.35rem, 6vw, 1.75rem);
+  }
+
+  .footer-links {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 380px) {
+  .fixed-container {
+    padding: 0 1.15rem;
+  }
+
+  .two-column.fixed-container {
+    padding-left: 1.15rem;
+    padding-right: 1.15rem;
+  }
+
+  .nav-menu li {
+    flex-basis: 100%;
+  }
+
+  .group-font-size {
+    font-size: 24px;
+  }
+
+  .person-card {
+    max-width: none;
+  }
 }
