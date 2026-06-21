@@ -25,3 +25,6 @@ out/
 # Env / secrets
 .env
 .env.*
+
+# Local data experiments
+*.csv

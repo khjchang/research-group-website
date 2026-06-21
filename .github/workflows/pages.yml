@@ -29,7 +29,7 @@ jobs:
         run: |
           mkdir _site
           cp *.html *.css *.svg *.txt *.xml _site/
-          cp -R images js pdf _site/
+          cp -R data images js pdf _site/
           touch _site/.nojekyll
 
       - name: Configure Pages
